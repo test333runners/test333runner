@@ -11,8 +11,7 @@ jobs:
     container:
       image: ubuntu:latest
       volumes:
-        - /_work:/_work
-        - /tmp/runner:/tmp/runner        
+        - /_work:/_work    
     steps:
       - name: Echo from Ubuntu subcontainer job
         run: hostname && pwd && cat /etc/*release
