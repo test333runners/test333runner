@@ -14,7 +14,10 @@ jobs:
     #    options: --privileged
     #    volumes:
     #      - /var/run/docker.sock:/var/run/docker.sock:ro
-    container: ubuntu:latest
+    container:
+      image: ubuntu:latest
+      volumes:
+        - /_work:/_work
     steps:
-      - name: Echo from Alpine
+      - name: Echo from subcontainer
         run: hostname && pwd && cat /etc/*release
