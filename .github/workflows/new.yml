@@ -6,18 +6,21 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  build:
+  ubuntu-job:
     runs-on: [self-hosted]
-    #services:
-    #  docker:
-    #   image: docker:dind
-    #    options: --privileged
-    #    volumes:
-    #      - /var/run/docker.sock:/var/run/docker.sock:ro
     container:
       image: ubuntu:latest
       volumes:
         - /_work:/_work
     steps:
-      - name: Echo from subcontainer
+      - name: Echo from Ubuntu subcontainer job
+        run: hostname && pwd && cat /etc/*release
+  alpine-job:
+    runs-on: [self-hosted]
+    container:
+      image: alpine:latest
+      volumes:
+        - /_work:/_work
+    steps:
+      - name: Echo from Alpine subcontainer job
         run: hostname && pwd && cat /etc/*release
