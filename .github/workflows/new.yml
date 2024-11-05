@@ -14,4 +14,4 @@ jobs:
     container: alpine:latest
     steps:
       - name: Get Alpine uname
-        run: (uname -a)
+        run: cat /etc/release*
