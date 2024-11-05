@@ -8,10 +8,13 @@ on:
 jobs:
   build:
     runs-on: [self-hosted]
-    #steps:
-    #  - name: Attempt dind
-    #    run: docker run hello-world
-    container: alpine:latest
+    services:
+      docker:
+        image: docker:dind
+        options: --privileged
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock:ro
+    container: alpine:linux
     steps:
-      - name: Get Alpine uname
-        run: cat /etc/release*
+      - name: Echo from Alpine
+      run: uname -a
