@@ -16,13 +16,13 @@ jobs:
     steps:
       - name: Echo from Ubuntu subcontainer job
         run: hostname && pwd && cat /etc/*release
-  alpine-job:
-    runs-on: [self-hosted]
-    container:
-      image: alpine:latest
-      volumes:
-        - /_work:/_work
-        - /tmp/runner:/tmp/runner
-    steps:
-      - name: Echo from Alpine subcontainer job
-        run: hostname && pwd && cat /etc/*release
+#  alpine-job:
+#    runs-on: [self-hosted]
+#    container:
+#      image: alpine:latest
+#      volumes:
+#        - /_work:/_work
+#        - /tmp/runner:/tmp/runner
+#    steps:
+#      - name: Echo from Alpine subcontainer job
+#        run: hostname && pwd && cat /etc/*release
