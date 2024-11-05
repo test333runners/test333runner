@@ -11,8 +11,7 @@ jobs:
     #steps:
     #  - name: Attempt dind
     #    run: docker run hello-world
-    container:
-      image: alpine:latest
+    container: alpine:latest
     steps:
       - name: Get Alpine uname
-      run: uname -a
+        run: uname -a
