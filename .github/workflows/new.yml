@@ -14,7 +14,7 @@ jobs:
         options: --privileged
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock:ro
-    container: alpine:linux
+    container: alpine:latest
     steps:
       - name: Echo from Alpine
         run: uname -a
