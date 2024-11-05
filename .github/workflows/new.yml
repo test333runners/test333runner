@@ -12,7 +12,7 @@ jobs:
       image: ubuntu:latest
       volumes:
         - /_work:/_work
-        - /__w:/__w
+        - /tmp/runner:/tmp/runner        
     steps:
       - name: Echo from Ubuntu subcontainer job
         run: hostname && pwd && cat /etc/*release
@@ -22,7 +22,7 @@ jobs:
       image: alpine:latest
       volumes:
         - /_work:/_work
-        - /__w:/__w
+        - /tmp/runner:/tmp/runner
     steps:
       - name: Echo from Alpine subcontainer job
         run: hostname && pwd && cat /etc/*release
