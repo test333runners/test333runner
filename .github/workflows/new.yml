@@ -9,5 +9,5 @@ jobs:
   build:
     runs-on: [self-hosted]
     steps:
-      - name: Run a one-line script
-        run: uname -a
+      - name: Attempt dind
+        run: docker run hello-world
